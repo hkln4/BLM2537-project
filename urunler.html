@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASAN</title>
+    <style>
+        body {
+            font-family: "Lato", Helvetica, Arial;
+            font-size: 15px;
+            background-image: url("webbg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            padding-top: 200px;
+        }
+        .ust-sheerit {
+          background-image: url("webbg1.png");
+          padding: 10px 20px;
+          width: 100%;
+          text-align: left;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          top: 0;
+          left:0;
+        }
+        .ust-sheerit h1 {
+          margin: 0;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          display: flex;
+          color: #ffffff;
+          align-items: center;
+        }
+        .ust-sheerit .ikonlar {
+          display: flex;
+          gap: 2px;
+          margin-left: 5px;
+        }
+        .ust-sheerit img {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          transition: transform 0.3s;
+        }
+        .ust-sheerit img:hover {
+          transform: scale(1.4);
+        }
+        .container {
+          width: 350px;
+          margin: 50px auto;
+        }
+        .container > ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 20px 0;
+        }
+        .dropdown a {
+          text-decoration:none;
+        }
+        .dropdown [data-toggle="dropdown"] {
+          width: 240%;
+          height: 100px;
+          position: relative;
+          display: block;
+          color: white;
+          background-image: url("webbg1.png");
+          padding: 10px;
+          margin-bottom: 15px;
+          float: right;
+        }
+        .dropdown [data-toggle="dropdown"]:hover {
+            background-image: url("webbg2.png");
+        }
+        .dropdown .dropdown-menu {
+          width: 243%;
+          max-height: 0;
+          overflow: hidden;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          margin-bottom: 5px;
+          margin-left: -500px;
+          float: left;
+        }
+        .dropdown .dropdown-menu li {
+          padding: 0;
+        }
+        .dropdown .dropdown-menu li a {
+          display: block;
+          color: #ffffff;
+          background-image: url("webbg1.png");
+          padding: 10px 10px;
+          margin-bottom: 1px;
+        }
+        .dropdown .dropdown-menu li a span {
+          float: right;
+        }
+        .dropdown .show {
+          display: block;
+          max-height: 9999px;
+        }
+        .ikon {
+          padding: 10px;
+          margin-top: 10px;
+          margin-right: 10px;
+          text-align: left;
+          line-height: 50px;
+          transition: transform 0.3s; /* Geçiş efekti ekler */
+        }
+        .ikon:hover {
+          transform: scale(1.2); /* Büyüklüğü 1.2 katına çıkarır */
+        }
+        .dropdown .dropdown-menu .sepet {
+          padding: -15px;
+          margin-left: 800px;
+          text-align: end;
+          transition: transform 0.3s;
+          width: 30px;
+          height: auto;
+        }
+        .dropdown .dropdown-menu .sepet:hover {
+          transform: scale(1.2);
+        }
+        .sepet-urun {
+            margin-bottom: 10px;
+            padding: 5px;
+            background-image: url("webbg1.png");
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .adet-butonlari {
+            display: flex;
+            gap: 5px;
+        }
+
+        .sepet-container {
+            float: right;
+            width: 500px;
+            padding: 10px;
+            background-image: url("webbg2.png");
+            margin-top: 80px;
+            color: #ffffff;
+        }
+
+        .toplam-tutar {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="ust-sheerit">        
+      <h1>
+        <span>URUNLER</span>
+        <div class="ikonlar">
+            <a href="giris.html" class="ikonlar">
+                <img src="home.png" alt="Home Icon" class="ikonlar">
+            </a>
+            <a href="sepet.html" class="ikonlar">
+                <img src="trolley.png" alt="Trolley Icon" class="ikonlar">
+            </a>
+        </div>
+    </h1>
+    </header>
+    <div class="sepet-container">
+      <h2>Sepet</h2>
+      <div id="sepet-icerik"></div>
+      <p class="toplam-tutar">Toplam Tutar: 0 TL</p>
+    </div>
+    <div class="container">
+        <ul>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown"><img src="hamburger.png" width="50px" height="50px" class="ikon">HAMBURGER</a>
+            <ul class="dropdown-menu">
+              <li><a>Klasik Hamburger <span>120 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Cheeseburger <span>100 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Füme Burger <span>130 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Chicken Burger <span>90 TL</span><img src="cart.png" class="sepet"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown"><img src="pizza.png" width="50px" height="50px" class="ikon">PIZZA</a>
+            <ul class="dropdown-menu">
+              <li><a>Karisik Pizza <span>120 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Margarita Pizza <span>120 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Vejetaryen Pizza <span>120 TL</span><img src="cart.png" class="sepet"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown"><img src="fries.png" width="50px" height="50px" class="ikon">ATISTIRMALIKLAR</a>
+            <ul class="dropdown-menu">
+              <li><a>Patates <span>40 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Nuggets <span>40 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Sogan Halkasi <span>40 TL</span><img src="cart.png" class="sepet"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown"><img src="donut.png" width="50px" height="50px"class="ikon">TATLILAR</a>
+            <ul class="dropdown-menu">
+              <li><a>Sufle <span>40 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Dondurma <span>30 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Turta <span>50 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Donut <span>30 TL</span><img src="cart.png" class="sepet"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" ><img src="softdrinks.png" width="50px" height="50px" class="ikon">ICECEKLER </a>
+            <ul class="dropdown-menu">
+              <li><a>Kola <span>30 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a >Fanta <span>30 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Gazoz <span>20 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Ayran <span>15 TL</span><img src="cart.png" class="sepet"></a></li>
+              <li><a>Su <span>5 TL</span><img src="cart.png" class="sepet"></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <script>
+        var dropdown = document.querySelectorAll('.dropdown');
+        var dropdownArray = Array.prototype.slice.call(dropdown, 0);
+        dropdownArray.forEach(function (el) {
+            var button = el.querySelector('a[data-toggle="dropdown"]'),
+                menu = el.querySelector('.dropdown-menu');
+    
+            button.onclick = function (event) {
+                if (!menu.classList.contains('show')) {
+                    menu.classList.add('show');
+                    menu.classList.remove('hide');
+                    event.preventDefault();
+                } else {
+                    menu.classList.remove('show');
+                    menu.classList.add('hide');
+                    event.preventDefault();
+                }
+            };
+        });
+        function guncelleSepet() {
+            var sepetIcerik = document.getElementById('sepet-icerik');
+            var toplamTutarElement = document.querySelector('.toplam-tutar');
+
+            sepetIcerik.innerHTML = '';
+            var sepet = localStorage.getItem('sepet') ? JSON.parse(localStorage.getItem('sepet')) : [];
+            var toplamTutar = 0;
+
+            sepet.forEach(function (urun) {
+                var sepetUrun = document.createElement('div');
+                sepetUrun.classList.add('sepet-urun');
+
+                var urunAdi = document.createElement('span');
+                urunAdi.textContent = urun.ad;
+
+                var adetArttirButton = document.createElement('button');
+                adetArttirButton.textContent = '+';
+                adetArttirButton.addEventListener('click', function () {
+                    adetArttir(urun.ad);
+                    guncelleSepet();
+                });
+
+                var adetAzaltButton = document.createElement('button');
+                adetAzaltButton.textContent = '-';
+                adetAzaltButton.addEventListener('click', function () {
+                    adetAzalt(urun.ad);
+                    guncelleSepet();
+                });
+
+                var silButonu = document.createElement('button');
+                silButonu.textContent = 'X';
+                silButonu.addEventListener('click', function () {
+                    urunSil(urun.ad);
+                    guncelleSepet();
+                });
+
+                var adetBilgisi = document.createElement('span');
+                adetBilgisi.textContent = 'Adet: ' + (urun.adet || 1);
+
+                var adetButonlari = document.createElement('div');
+                adetButonlari.classList.add('adet-butonlari');
+                adetButonlari.appendChild(adetArttirButton);
+                adetButonlari.appendChild(adetAzaltButton);
+
+                sepetUrun.appendChild(urunAdi);
+                sepetUrun.appendChild(adetBilgisi);
+                sepetUrun.appendChild(adetButonlari);
+                sepetUrun.appendChild(silButonu);
+
+                sepetIcerik.appendChild(sepetUrun);
+
+                // Toplam tutarı güncelle
+                toplamTutar += urun.fiyat * (urun.adet || 1);
+            });
+
+            toplamTutarElement.textContent = 'Toplam Tutar: ' + toplamTutar.toFixed(2) + ' TL';
+        }
+          document.addEventListener('DOMContentLoaded', function () {
+            // Tüm "cart.png" resimlerine tıklama event listener'ı ekle
+            var cartResimler = document.querySelectorAll('.sepet');
+            cartResimler.forEach(function (cartResim) {
+                cartResim.addEventListener('click', function () {
+                    // Tıklanan ürünün adını ve fiyatını al
+                    var urunAdi = this.parentElement.textContent.trim(); // Ürün adını uygun bir şekilde ayarlamalısınız
+                    var fiyat = parseFloat(this.parentElement.querySelector('span').textContent); // Ürün fiyatını uygun bir şekilde ayarlamalısınız
+
+                    // Bu örnekte urunEkle fonksiyonuna örnek veriyorum
+                    urunEkle(urunAdi, fiyat);
+                });
+            });
+        });
+
+        function urunEkle(urunAdi, fiyat) {
+            // Sepete ürünü ekle
+            var sepet = localStorage.getItem('sepet') ? JSON.parse(localStorage.getItem('sepet')) : [];
+            var urun = {
+                ad: urunAdi,
+                fiyat: fiyat,
+                adet: 1
+            };
+            sepet.push(urun);
+            localStorage.setItem('sepet', JSON.stringify(sepet));
+
+            // Sepeti güncelle
+            guncelleSepet();
+        }
+
+
+      function urunSil(urunAdi) {
+            // Sepetten ürünü kaldır
+            var sepet = localStorage.getItem('sepet') ? JSON.parse(localStorage.getItem('sepet')) : [];
+            sepet = sepet.filter(function (urun) {
+                return urun.ad !== urunAdi;
+            });
+            localStorage.setItem('sepet', JSON.stringify(sepet));
+        }
+
+        function adetArttir(urunAdi) {
+            // Sepetteki ürünün adetini arttır
+            var sepet = localStorage.getItem('sepet') ? JSON.parse(localStorage.getItem('sepet')) : [];
+            sepet.forEach(function (urun) {
+                if (urun.ad === urunAdi) {
+                    urun.adet = urun.adet ? urun.adet + 1 : 2; // Eğer adet yoksa 1 olarak başla, varsa bir arttır
+                }
+            });
+            localStorage.setItem('sepet', JSON.stringify(sepet));
+        }
+
+        function adetAzalt(urunAdi) {
+            // Sepetteki ürünün adetini azalt
+            var sepet = localStorage.getItem('sepet') ? JSON.parse(localStorage.getItem('sepet')) : [];
+            sepet.forEach(function (urun) {
+                if (urun.ad === urunAdi && urun.adet && urun.adet > 1) {
+                    urun.adet -= 1;
+                }
+            });
+            localStorage.setItem('sepet', JSON.stringify(sepet));
+        }
+
+      guncelleSepet(); // Sayfa yüklendiğinde sepeti güncelle
+  </script>
+</body>
+</html>

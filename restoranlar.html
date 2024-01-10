@@ -1,0 +1,198 @@
+<html>
+    <head>
+        <title>HASAN</title>
+        <style>
+            body {
+                font-family: "Lato", Helvetica, Arial;
+                font-size: 15px;
+                background-image: url("webbg.png");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment: fixed;
+                padding-top: 200px;
+            }
+            .ust-sheerit {
+                background-image: url("webbg1.png");
+                padding: 10px 20px;
+                width: 100%;
+                text-align: left;
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                top: 0;
+                left:0;
+            }
+            .ust-sheerit h1 {
+                margin: 0;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                display: flex;
+                color: #ffffff;
+                align-items: center;
+            }
+            .ust-sheerit .ikonlar {
+                display: flex;
+                gap: 2px;
+                margin-left: 5px;
+            }
+            .ust-sheerit img {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+            .ust-sheerit img:hover {
+                transform: scale(1.4);
+            }
+            .container {
+                width: 450px;
+                margin: 50px auto;
+                translate: 50% 50%;
+            }
+            .container > ul {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 0 0;
+            }
+            .dropdown a {
+                text-decoration:none;
+            }
+            .dropdown [data-toggle="dropdown"] {
+                width: 230%;
+                height: 100px;
+                position: relative;
+                display: block;
+                color: white;
+                background-image: url("webbg1.png");
+                padding: 10px;
+                margin-bottom: 15px;
+                float: right;
+                text-align: center;
+            }
+            .dropdown [data-toggle="dropdown"]:hover {
+                background-image: url("webbg2.png");
+            }
+            .dropdown .dropdown-menu {
+                width: 232%;
+                max-height: 0;
+                overflow: hidden;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 5px;
+                margin-left: -600px;
+                float: left;
+            }
+            .dropdown .dropdown-menu li {
+                padding: 0;
+            }
+            .dropdown .dropdown-menu li a {
+                display: block;
+                color: #ffffff;
+                background-image: url("webbg2.png");
+                padding: 10px 10px;
+                margin-bottom: 1px;
+                text-align: center;
+            }
+            .dropdown .dropdown-menu li a span {
+                float: right;
+            }
+            .dropdown .show {
+                display: block;
+                max-height: 9999px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="ust-sheerit">        
+            <h1>
+              <span>RESTORANLAR</span>
+              <div class="ikonlar">
+                  <a href="giris.html" class="ikonlar">
+                      <img src="home.png" alt="Home Icon" class="ikonlar">
+                  </a>
+                  <a href="sepet.html" class="ikonlar">
+                      <img src="trolley.png" alt="Trolley Icon" class="ikonlar">
+                  </a>
+              </div>
+          </h1>
+        </header>
+        <div class="container">
+            <ul>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown"><h1>KIZILAY BAYII</h1></a>
+                    <ul class="dropdown-menu">
+                        <li><a>
+                            <br>
+                            Adres: Kizilay, Kumrular Cd. No: 20/A, 06420 Cankaya/Ankara
+                            <br>
+                            <br>
+                            Kapanis saati: 23:45
+                            <br>
+                            <br>
+                            Telefon: 444 6 555
+                            <br>
+                            <br>
+                        </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown"><h1>BAHCELIEVLER BAYII</h1></a>
+                    <ul class="dropdown-menu">
+                        <li><a>
+                            <br>
+                            Adres: Yukari Bahcelievler, Azerbaycan Cd. No: 99/B, 06490 Cankaya/Ankara
+                            <br>
+                            <br>
+                            Kapanis saati: 23:45
+                            <br>
+                            <br>
+                            Telefon: 444 6 555
+                            <br>
+                            <br>
+                        </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown"><h1>HACETTEPE BAYII</h1></a>
+                    <ul class="dropdown-menu">
+                        <li><a>
+                            <br>
+                            Adres: Hacettepe, Talatpasa Blv No: 141/C, 06230 Altindag/Ankara
+                            <br>
+                            <br>
+                            Kapanis saati: 23:45
+                            <br>
+                            <br>
+                            Telefon: 444 6 555
+                            <br>
+                            <br>
+                        </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+            var dropdown = document.querySelectorAll('.dropdown');
+            var dropdownArray = Array.prototype.slice.call(dropdown, 0);
+            dropdownArray.forEach(function (el) {
+                var button = el.querySelector('a[data-toggle="dropdown"]'),
+                    menu = el.querySelector('.dropdown-menu');
+        
+                button.onclick = function (event) {
+                    if (!menu.classList.contains('show')) {
+                        menu.classList.add('show');
+                        menu.classList.remove('hide');
+                        event.preventDefault();
+                    } else {
+                        menu.classList.remove('show');
+                        menu.classList.add('hide');
+                        event.preventDefault();
+                    }
+                };
+            });
+        </script>
+    </body>
+</html>
